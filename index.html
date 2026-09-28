@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BHUMI•NET | Smart Subsidence Intelligence</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><div class="brand-mark"><i></i><i></i><i></i></div><span>BhuRakshak</span></div>
+      <div class="network-pill"><b></b><span>NETWORK HEALTHY</span></div>
+      <nav>
+        <a class="active" href="#overview"><span>▦</span> Command Centre</a>
+        <a href="#map"><span>◈</span> Live Mine Panel</a>
+        <a href="#sensors"><span>⌁</span> Mesh Sensors <em>24</em></a>
+        <a href="#analytics"><span>◌</span> AI Intelligence</a>
+        <a href="#alerts"><span>△</span> Alerts <em class="danger">3</em></a>
+        <a href="#reports"><span>▤</span> Reports</a>
+      </nav>
+      <div class="side-bottom">
+        <div class="mine-select"><span class="mine-icon">◆</span><div><small>ACTIVE SITE</small><strong>Jharia Block–IV</strong></div><span>⌄</span></div>
+        <div class="operator"><div class="avatar">SK</div><div><strong>Shiva Kushwaha</strong><small>Safety Officer</small></div><span>⋮</span></div>
+      </div>
+    </aside>
+
+    <main>
+      <header>
+        <div><p class="eyebrow">COMMAND CENTRE / <span>LIVE</span></p><h1>Surface Integrity Overview</h1><p class="header-sub">Jharia Coalfield, Panel IV · Dhanbad, Jharkhand</p></div>
+        <div class="header-actions"><div class="time"><b id="clock">10:42:18</b><span>21 SEP 2026 · IST</span></div><button class="outline-btn" id="simulateBtn">✦ Simulate event</button><button class="profile-btn">SK</button></div>
+      </header>
+
+      <section class="stat-grid" id="overview">
+        <article class="stat-card"><div class="stat-top"><span>ACTIVE NODES</span><span class="mini-good">● LIVE</span></div><div class="stat-value"><strong id="activeNodes">24</strong><span>/ 25</span></div><div class="stat-foot"><span class="signal">▂▅▇</span> 96% mesh connectivity <span class="up">↑ 2.1%</span></div></article>
+        <article class="stat-card"><div class="stat-top"><span>MAX TILT</span><span class="tag amber">WATCH</span></div><div class="stat-value"><strong id="maxTilt">0.84</strong><span>°</span></div><div class="stat-foot">Node <b id="tiltNode">N-17</b> · 12 min ago <span class="up">↑ 0.08°</span></div></article>
+        <article class="stat-card"><div class="stat-top"><span>GROUND MOVEMENT</span><span class="tag green">NORMAL</span></div><div class="stat-value"><strong id="movement">3.2</strong><span>mm/hr</span></div><div class="stat-foot">Panel average · 1 hour window <span class="down">↓ 0.4</span></div></article>
+        <article class="stat-card risk-card"><div class="stat-top"><span>SUBSIDENCE RISK</span><span class="tag red">ELEVATED</span></div><div class="risk-line"><strong id="riskValue">62</strong><span>/100</span></div><div class="progress"><i id="riskBar"></i></div><div class="stat-foot">AI forecast · next 24 hours <span class="up">↑ 7 pts</span></div></article>
+      </section>
+
+      <section class="content-grid" id="map">
+        <article class="panel map-panel">
+          <div class="panel-head"><div><p class="eyebrow">GIS MONITORING</p><h2>Live deformation map</h2></div><div class="map-tools"><button class="selected">Risk zone</button><button>Terrain</button><button>⌗</button></div></div>
+          <div class="map-wrap">
+            <div class="map-label north">N<br>↑</div><div class="map-label scale">100 m</div>
+            <div class="contours"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+            <div class="panel-boundary"><span>UNDERGROUND<br>LONGWALL PANEL IV</span></div>
+            <div class="heat heat-1"></div><div class="heat heat-2"></div><div class="heat heat-3"></div>
+            <svg class="mesh-lines" viewBox="0 0 800 430" preserveAspectRatio="none"></svg>
+            <div class="nodes-layer"></div>
+            <div class="map-legend"><b>Predicted deformation</b><div><i class="l-green"></i>&lt; 5 mm</div><div><i class="l-yellow"></i>5–15 mm</div><div><i class="l-orange"></i>15–30 mm</div><div><i class="l-red"></i>&gt; 30 mm</div></div>
+            <div class="hotspot-card"><span class="pulse"></span><div><b>Zone A anomaly</b><small>Probable depression centre</small></div><strong>62%</strong></div>
+          </div>
+          <div class="map-foot"><span><i class="live-dot"></i> Updated 18 seconds ago</span><span>24 / 25 nodes reporting</span><button id="expandMap">Expand map ↗</button></div>
+        </article>
+
+        <article class="panel alerts-panel" id="alerts">
+          <div class="panel-head"><div><p class="eyebrow">EARLY WARNING</p><h2>Active alerts <span class="counter">3</span></h2></div><button class="more">•••</button></div>
+          <div class="alert-list" id="alertList">
+            <div class="alert high"><div class="alert-icon">!</div><div><div class="alert-title">Accelerating tilt trend <span>HIGH</span></div><p>N-17 shows persistent eastward tilt</p><small>10:30 IST · Zone A</small></div><button class="ack">Acknowledge</button></div>
+            <div class="alert medium"><div class="alert-icon">⌁</div><div><div class="alert-title">Vibration anomaly <span>MEDIUM</span></div><p>Unusual low-frequency signature</p><small>10:18 IST · N-12 cluster</small></div><button class="ack">Acknowledge</button></div>
+            <div class="alert low"><div class="alert-icon">⌇</div><div><div class="alert-title">Node battery low <span>LOW</span></div><p>N-08 battery at 18%</p><small>09:54 IST · Sector 2</small></div><button class="ack">Acknowledge</button></div>
+          </div>
+          <button class="view-all" id="viewAlerts">View alert history →</button>
+        </article>
+      </section>
+
+      <section class="lower-grid" id="analytics">
+        <article class="panel trend-panel"><div class="panel-head"><div><p class="eyebrow">AI DEFORMATION FORECAST</p><h2>Surface movement trend</h2></div><select id="trendSelect"><option>Last 24 hours</option><option>Last 7 days</option></select></div><div class="chart-meta"><span><i></i> Observed movement</span><span><i class="forecast-dot"></i> AI forecast</span><b>Projected critical threshold <span>18:00</span></b></div><div class="chart"><div class="y-axis"><span>12</span><span>9</span><span>6</span><span>3</span><span>0</span></div><svg id="trendChart" viewBox="0 0 700 200" preserveAspectRatio="none"></svg><div class="x-axis"><span>00:00</span><span>04:00</span><span>08:00</span><span>12:00</span><span>16:00</span><span>20:00</span><span>Now</span></div></div></article>
+        <article class="panel ai-panel"><div class="panel-head"><div><p class="eyebrow">MODEL INSIGHT</p><h2>AI assessment</h2></div><span class="model">v2.4</span></div><div class="ai-score"><div class="score-ring"><strong id="aiConf">91</strong><small>%</small></div><div><b>Elevated risk pattern</b><p>Multi-sensor correlation detected across Zone A.</p></div></div><div class="factors"><div><span>1</span><p><b>Tilt acceleration</b><small>Strong contributor</small></p><em>+34%</em></div><div><span>2</span><p><b>Micro-vibration cluster</b><small>Moderate contributor</small></p><em>+18%</em></div><div><span>3</span><p><b>Distance contraction</b><small>Emerging signal</small></p><em>+10%</em></div></div><button class="recommend">Review recommended action <span>→</span></button></article>
+      </section>
+
+      <section class="sensor-section" id="sensors"><div class="section-title"><div><p class="eyebrow">WIRELESS SURFACE MESH</p><h2>Sensor node health</h2></div><button class="outline-btn" id="exportBtn">↓ Export telemetry</button></div><div class="sensor-table"><div class="table-head"><span>NODE</span><span>LOCATION</span><span>TILT</span><span>VIBRATION</span><span>BATTERY</span><span>MESH LINK</span><span>STATUS</span></div><div id="sensorRows"></div></div></section>
+    </main>
+  </div>
+  <div class="toast" id="toast"></div>
+  <script src="app.js"></script>
+</body>
+</html>
